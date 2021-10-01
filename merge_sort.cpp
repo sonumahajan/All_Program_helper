@@ -3,6 +3,9 @@ using namespace std;
 void merge(int *,int, int , int );
 void merge_sort(int *arr, int low, int high)
 {
+    
+    
+    
     int mid;
     if (low < high){
         //divide the array at mid and sort independently using merge sort
