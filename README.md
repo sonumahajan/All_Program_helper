@@ -1,2 +1,2 @@
 # hacktoberfest_helper
-add PR and i ll merge it with hacktoberfest-accepted tag
+Add PR and I will merge it with hacktoberfest-accepted tag
