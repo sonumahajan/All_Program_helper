@@ -35,4 +35,4 @@ void DFS(int i)
        if(!visited[j]&&G[i][j]==1)
             DFS(j);
 }
-// Time complexity is O(V)
+/* Time complexity is O(V) */
