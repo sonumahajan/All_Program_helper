@@ -1,5 +1,4 @@
-/*Write a program that will check the given string is palindrome or not.
-Name :Abinash Samal Group:C1 Roll No.:02*/
+
 #include<stdio.h>
 int main()
 {
