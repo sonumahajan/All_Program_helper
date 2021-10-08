@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/list.css">
+    <link rel="stylesheet" href="loader.html">
+
+    <link rel="stylesheet" href="styles/loader.css">
+
+    <style>
+        #map {
+            height: 100%;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <header id="navheader"></header>
+
+        <div class="common">
+            <div class="views">
+                <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" href="#list-view">List View</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false" href="#map-view">Map View</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!--      <header>
+                <div>
+                    <a href="index.html"> <img src=" assests\images\logo.png " alt="logo " height="60 " width="60 "></a>
+
+                    <button type="button" class="btn  login" data-toggle="modal" data-target="#registerModal" id="sign-in-button">
+                        Login
+                    </button>
+
+
+
+
+            </header> -->
+
+            <div class="parent-div tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="hotels" id="list-view">
+
+                        <div class="hotel-description">
+                            <a href="detail.html">
+                                <div class="hotel-card">
+                                    <div class="card-box1">
+                                        <img src="https://media-cdn.tripadvisor.com/media/photo-w/17/b3/09/b4/by-the-poolside.jpg" alt="Radisson Blu Hotel">
+                                    </div>
+                                    <div class="card-box2">
+                                        <h3>Radisson Blu Hotel</h3>
+                                        <p>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </p>
+                                        <p>New Delhi</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="hotel-description">
+                            <div class="hotel-card">
+                                <div class="card-box1">
+                                    <img src="https://media-cdn.tripadvisor.com/media/photo-w/15/06/31/5f/facade.jpg" alt="The Lalit New Delhi">
+                                </div>
+                                <div class="card-box2">
+                                    <h3>The Lalit New Delhi</h3>
+                                    <p>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star-half-o checked"></span>
+                                        <span class="fa fa-star"></span>
+                                    </p>
+                                    <p>New Delhi</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hotel-description">
+                            <div class="hotel-card">
+                                <div class="card-box1">
+                                    <img src="https://media-cdn.tripadvisor.com/media/photo-w/1b/4e/9b/11/exterior.jpg" alt="Taj Palace">
+                                </div>
+                                <div class="card-box2">
+                                    <h3>Taj Palace</h3>
+                                    <p>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                    </p>
+                                    <p>New Delhi</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="map" id="map-view">
+                        <img src="https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png" alt="Map View">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer id="footer"></footer>
+
+
+        <div class="contactus-modal modal" id="contactus-modal" data-backdrop="false"></div>
+        <div class="login-modal modal" id="login-modal" data-backdrop="false"></div>
+
+        <div id="map"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXJE0vmvKs_C-BrzXg8xv8Z9mLij0dvX0&callback=initMap
+"></script>
+        <!--   <script>
+            var map;
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: {
+                        lat: -34.397,
+                        lng: 150.644
+                    },
+                    zoom: 8
+                });
+            }
+        </script> -->
+
+
+
+        <div class="spin">
+            <div class="loader"></div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script src="./scripts/common.js"></script>
+</body>
+
+</html>
