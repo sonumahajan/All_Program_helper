@@ -1,3 +1,25 @@
+/**************************
+Given n integer coordinates. The task is to find sum of Manhattan distance between all pairs of coordinates. 
+Manhattan Distance between two points (a1, b1) and (a2, b2) is: 
+|a1 – a2| + |b1 – b2|
+
+Enter the number of points                                                      
+Example 1:
+4                                                                               
+Enter the X coordinates of the points                                           
+1                                                                               
+3                                                                               
+-1                                                                              
+3                                                                               
+Enter the Y coordinates of the points                                           
+1                                                                               
+2                                                                               
+8                                                                               
+5                                                                               
+Result 38
+
+/**********************SOLUTION************************
+**************/
 #include <stdio.h>
 int main()
 {
