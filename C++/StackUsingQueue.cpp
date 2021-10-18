@@ -1,81 +1,84 @@
-//push method
-#include <iostream>
-#include <queue>
+/* Program to implement a stack using
+two queue */
+#include <bits/stdc++.h>
+
 using namespace std;
-//two methods 1)make push opearion costly 2)make pop opearion costly
-//using method 1
-//take 2 queues q1 and q2
-//start by adding 1 element in q2
-//push that element from q1 to q2
-//lastly swap the values of q
 
-//q1
-//q2 1
-//swap
-//q1 1
-//q2 
-// add new element in q2
-//q1  1  //q2 2. push the elements of q1 to q2
-//q1    //q2 1 2. Now swap
-// q1 1 2 //q2 
+class Stack {
+	// Two inbuilt queues
+	queue<int> q1, q2;
 
-class Stack{
-    int N;
-    queue<int> q1;
-    queue<int> q2;
+	// To maintain current number of
+	// elements
+	int curr_size;
 
-    public:
-    Stack(){
-        N=0;
-    }
+public:
+	Stack()
+	{
+		curr_size = 0;
+	}
 
-    void push(int val){
-        q2.push(val);
-        N++;
-        while(!q1.empty()){
-            q2.push(q1.front());
-            q1.pop();
-        }
+	void push(int x)
+	{
+		curr_size++;
 
-        queue<int> temp = q1;
-        q1 = q2;
-        q2 = temp;
-    }
+		// Push x first in empty q2
+		q2.push(x);
 
-    void pop(){
-        q1.pop();
-        N--;
-    }
+		// Push all the remaining
+		// elements in q1 to q2.
+		while (!q1.empty()) {
+			q2.push(q1.front());
+			q1.pop();
+		}
 
-    int top(){
-        return q1.front();
-    }
+		// swap the names of two queues
+		queue<int> q = q1;
+		q1 = q2;
+		q2 = q;
+	}
 
-    int size(){
-        return N;
-    }
+	void pop()
+	{
+
+		// if no elements are there in q1
+		if (q1.empty())
+			return;
+		q1.pop();
+		curr_size--;
+	}
+
+	int top()
+	{
+		if (q1.empty())
+			return -1;
+		return q1.front();
+	}
+
+	int size()
+	{
+		return curr_size;
+	}
 };
 
+// Driver code
 int main()
 {
-    Stack st;
-    st.push(1);
-    st.push(2);
-    st.push(3);
-    st.push(4);
+	Stack s;
+	s.push(1);
+	s.push(2);
+	s.push(3);
 
-    cout<<st.top()<<endl;
-    cout<<st.size()<<endl;
-    st.pop();
-    cout<<st.top()<<endl;
-    cout<<st.size()<<endl;
-    st.pop();
-    cout<<st.top()<<endl;
-    cout<<st.size()<<endl;
-    st.pop();
-    cout<<st.top()<<endl;
-    cout<<st.size()<<endl;
-    st.pop();
-    
-    return 0;
+	cout << "current size: " << s.size()
+		<< endl;
+	cout << s.top() << endl;
+	s.pop();
+	cout << s.top() << endl;
+	s.pop();
+	cout << s.top() << endl;
+
+	cout << "current size: " << s.size()
+		<< endl;
+	return 0;
 }
+
