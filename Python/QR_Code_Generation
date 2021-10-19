@@ -1,0 +1,13 @@
+import pyqrcode
+import png
+from pyqrcode import QRCode
+  
+  
+# String which represents the QR code
+s = input("Enter the url this QR Code will point to : ")
+  
+# Generate QR code
+url = pyqrcode.create(s)
+  
+# Created and save the png file as "qrcode.png"
+url.png('qrcode.png', scale = 6)
