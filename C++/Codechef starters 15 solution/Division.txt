@@ -1,0 +1,40 @@
+Division Problem Code: DIVEO
+--------------------------------
+Chef has an integer N. He repeats the following operation until N becomes 1.
+
+Chef chooses an integer X such that X>1 and X is a divisor of N and then divides N by X (the new value of N becomes N/X). If X is even, Chef gets A points otherwise he gets B points
+Can you find the maximum points Chef can get if he performs the operations optimally?
+
+Input Format
+-----------------
+First line will contain T, number of testcases. Then the testcases follow.
+Each testcase contains of a single line of input containing three integers N,A,B.
+
+Output Format
+------------
+For each testcase, output in a single line the maximum points Chef can get.
+
+Constraints
+--------------
+1≤T≤2⋅103
+2≤N≤109
+−103≤A,B≤103
+
+Sample Input 1 
+----------------
+4
+10 2 3
+15 5 -2
+12 2 3
+8 -1 0
+Sample Output 1 
+---------------
+5
+-2
+7
+-1
+Explanation
+-------------------
+Test case 1: First Chef divides N=10 by 2 and gets 2 points and then divides by 5 and thus gets 3 points. Hence Chef gets a total of 2+3=5 points.
+
+Test case 2: Chef divides N by 15. Hence he gets −2 points.
