@@ -1,0 +1,34 @@
+#tsparticles {
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+
+.main{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.wrapper{
+    backdrop-filter: (10px);
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+h2 {
+  text-align: center;
+}

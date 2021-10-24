@@ -1,5 +1,3 @@
 # All_Program_helper
-Upload Your Projects
-Add PR and I will merge it with hacktoberfest-accepted tag
-
-# follow me on github 
+Add your project in folder and create PR and i ll merge it with hacktoberfest-accepted tag if the changes are useful. 
+## Follow me on Github

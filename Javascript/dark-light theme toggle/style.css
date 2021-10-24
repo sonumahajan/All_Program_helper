@@ -1,0 +1,26 @@
+body {
+    margin: 0 20%;
+    margin-top: 20%;
+    overflow: hidden;
+}
+
+div {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 100px;
+}
+
+.dark {
+  color: #FFF;
+  background-color: #222;
+}
+
+.light {
+  color: #111;
+  background-color: #EEE;
+}
+
+button {
+    display: block;
+    margin: auto;
+}

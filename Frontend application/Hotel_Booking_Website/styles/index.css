@@ -1,0 +1,126 @@
+/******************** Content ******************/
+
+
+/* .content{
+    padding-top: 60px;
+} */
+
+#mydiv {
+    display: none;
+}
+
+.search {
+    background: url('https://media-cdn.tripadvisor.com/media/photo-o/14/10/2e/af/india.jpg') center no-repeat;
+    height: 380px;
+    background-size: cover;
+    position: relative;
+}
+
+.search-bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 348px;
+    width: 100%;
+}
+
+.search-bar input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 12px;
+    width: 100%;
+    outline: none;
+}
+
+.city {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding: 5% 0% 3% 0%; */
+}
+
+.city img {
+    width: 150px;
+    height: 150px;
+    /* padding: 4%; */
+    border-radius: 25%;
+    box-shadow: 10px 10px 10px grey;
+}
+
+.city a {
+    text-decoration: none;
+}
+
+.images {
+    position: relative;
+    margin: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 3px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    border-radius: 25%;
+    display: none;
+}
+
+.image-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+    color: #f1f1f1;
+    display: none;
+    margin-top: 1em;
+}
+
+.images:hover .overlay {
+    display: block;
+}
+
+.images:hover .image-title {
+    display: block;
+}
+
+.view-more {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.view-more a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+    .search-bar {
+        width: 50%;
+    }
+    .city {
+        width: 50%;
+        margin: 0px auto;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .common {
+        padding-bottom: 9%;
+    }
+    .city {
+        width: 63%;
+        margin: 0px auto;
+    }
+}

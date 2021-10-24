@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>ZomatoIndia</title>
+</head>
+
+<body>
+    <!-- Navbar-->
+    <header>
+        <nav class="navbar">
+            <div class="navbar__brand">
+                <img src="./assets/logo.png" alt="Logo" class="navbar__logo">
+            </div>
+            <div class="navbar__nav__items">
+                <button class="nav__item button__primary">
+                    Order Food
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="container">
+        <!--Hero Section-->
+        <section class="hero__container">
+            <div class="hero__image__container">
+                <img class="hero__image" src="./assets/hero.jpg" alt="hero image">
+                <img class="hero__image__pattern" src="./assets/svg/herobgpattren.svg" alt="hero image">
+                <img class="hero__image__shape" src="./assets/svg/heroShape.svg" alt="hero image">
+            </div>
+            <div class="hero__description">
+                <h1 class="hero__text">Order Food from Favourite Restaurants near you.</h1>
+                <button class="button__primary">Order Now</button>
+            </div>
+        </section>
+        <!--Explore the menu-->
+        <section class="explore__menu__container">
+            <h1 class="explore__menu__text">
+                Explore Our Menu
+            </h1>
+            <div class="explore__menu__gradient__bg"></div>
+            <div class="explore__menu__lists">
+                <!--Burger Card-->
+                <div class="food__menu__card">
+                    <img class="food__image" src="./assets/burger.jpg" alt="burger" />
+                    <div class="food__menu__card__description">
+                        <h3 class="food_title">Burgers</h3>
+                        <p class="food___Restaurants">Burger King, McDonalds, Burger Place <span style="color:red">+3</span></p>
+                    </div>
+                </div>
+                <!--Pizza Card-->
+                <div class="food__menu__card" id="pizza__card">
+                    <img class="food__image" src="./assets/pizza.jpg" alt="Pizza" />
+                    <div class="food__menu__card__description">
+                        <h3 class="food_title">Pizzas</h3>
+                        <p class="food___Restaurants">Pizza Hut, Domino's Pizza <span style="color:red">+3</span></p>
+                    </div>
+                </div>
+                <!--IceCream Card-->
+                <div class="food__menu__card">
+                    <img class="food__image" src="./assets/iceCream.jpg" alt="IceCream" />
+                    <div class="food__menu__card__description">
+                        <h3 class="food_title">Ice Creams</h3>
+                        <p class="food___Restaurants">Baskin Robbins, Ibaco <span style="color:red">+3</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="explore__menu__viewmore">
+                <button class="button__primary">View More</button>
+            </div>
+        </section>
+        <!--Restaurants-->
+        <section class="restaurant__container">
+            <h1 class="restaurants__description">Order From 100s of Restaurants</h1>
+            <div class="restaurants__flex">
+                <div class="restaurants__flex__row1">
+                    <div class="restaurant__1"><img class="restaurant__1__image" src="./assets/restaurant1.jpg" alt="restaurant 1 "></div>
+                    <div class="restaurant__2"><img class="restaurant__2__image" src="./assets/restaurant2.jpg" alt="restaurant 2"></div>
+                </div>
+                <div class="restaurants__flex__row2">
+                    <div class="restaurant__3"><img class="restaurant__3__image" src="./assets/restaurant3.jpg" alt="restaurant 3"></div>
+                    <div class="restaurant__4"><img class="restaurant__4__image" src="./assets/restaurant4.jpg" alt="restaurant 4"></div>
+                </div>
+            </div>
+        </section>
+        <!--Stay Updated-->
+        <section class="updated__container">
+            <h1 class="updated__description">Subscribe Now!</h1>
+            <div class="updated__subscribe">
+                <div class="updated__input">
+                    <input type="email" placeholder="enter your email-id" class="email__input">
+                </div>
+                <div class="update__get">
+                    <button class="button__primary">Get Updates</button>
+                </div>
+            </div>
+        </section>
+        <!--Quote-->
+        <section class="quote__container">
+            <div class="quote__overlay"></div>
+            <h3 class="quote__text">"Laughter is Brightest, where Food is the Best!"</h3>
+        </section>
+    </main>
+    <footer>
+        <img class="footer_logo" src="./assets/logo.png" alt="logo" />
+        <ul>
+            <li>Pricing</li>
+            <li>Terms and condition</li>
+            <li>Partnership</li>
+            <li>Career</li>
+            <li>Contact</li>
+        </ul>
+
+
+    </footer>
+    <footer class="cpyright">
+        <center>Copyright &#169 2021 Zomato| All Rights Reserved.</center>
+    </footer>
+</body>
+
+</html>
