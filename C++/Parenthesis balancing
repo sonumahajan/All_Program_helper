@@ -1,0 +1,52 @@
+Ques:Being a Computer Science student you are given a task to interpret a complex mathematical expression consisting of a series of digits along with the various types of brackets like parenthesis, square bracket, and curly braces imbibed in it. While solving the problem you decided that you should divide the problem into multiple steps such that, in the first step, you should check the number of brackets of the same type is equal in this mathematical expression by first discarding the digits in this expression such that it would be simplified with respect to the checking of such brackets. Now, to achieve the solution you need to do the following: when you would encounter one of the brackets insert it into the stack, and when the same type of brackets is encountered, you have to remove same type of brackets from the stack.
+
+ 
+
+Sample input:
+(()
+Sample output:
+
+The parenthesis are not balanced
+
+
+
+
+
+Code:
+
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<string.h>
+using namespace std;
+
+int main(){
+    string a;
+    cin>>a;
+    int count1=0,count2=0;
+    if(a.length()>1){
+    if(a.length()%2==0){
+        
+        for(int i=0;i<a.length();i++){
+            if(a[i]=='('){
+                count1++;
+            }
+            else{
+                count2++;
+            }
+        }
+        cout<<"The number of open parenthesis="<<count1<<endl;
+        cout<<"The number of closed parenthesis="<<count2<<endl;
+        cout<<"The parenthesis are balanced"<<endl;
+        
+    }
+    else{
+        cout<<"The parenthesis are not balanced"<<endl;
+        }
+    }
+    else{
+        cout<<"INPUT NOT FOUND";
+    }
+    
+    return 0;
+}
