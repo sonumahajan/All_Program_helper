@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    
+        <link rel="stylesheet" href="/dashstyle.css">
+    </head>
+    <body> 
+         <div class="container-fluid">
+               <div class="row">
+                    <div class="col-md-12">
+                        <h1>Dashboard</h1>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-12">
+                         <div class="card">
+                             <div class="card-header">
+                              Stats
+                             </div>
+                             <div class="card-body">
+                                <table class="table table-dark">
+                                     <tr>
+                                         <td>Total Stock</td>
+                                         <td>Total Brands</td>
+                                     </tr>
+                                     <tr>
+                                         {{#n1}}<td>{{sum}}</td>{{/n1}}
+                                          {{#n2}}<td>{{count}}</td>{{/n2}}
+                                     </tr>
+                                </table>
+                             </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-12">
+                         <div class="card">
+                             <div class="card-header">
+                              Edit
+                             </div>
+                             <div class="card-body">
+                                <a href="/add" class="btn btn-primary">Add Medicine</a>
+                                <a href="/edit" class="btn btn-primary">Edit Medicine</a>
+                                <a href="/meds" class="btn btn-primary">Medicine List</a>
+                             </div>
+                         </div>
+                    </div>
+               </div>
+         </div>
+    </body>
+</html>

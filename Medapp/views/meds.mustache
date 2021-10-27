@@ -1,0 +1,62 @@
+<html>
+    <head>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    
+    </head>
+    <body>
+       
+       <div class="container">
+           <div class="row mt-4 mb-2">
+                <div class="col-md-12">
+                    <h3>List of Available Meds</h3> 
+                </div>
+           </div>
+
+           <div class="row mt-4 mb-2">
+                <div class="col-md-12">
+                     <table class="table table-striped table-dark">
+                         <thead>
+                           <tr>
+                             <th scope="col">MID</th>
+                             <th scope="col">Medicine</th>
+                             <th scope="col">Count</th>
+                             <th scope="col">Brand</th>
+                             <th scope="col">Edit</th>
+                             <th scope="col">Delete</th>
+                            </tr>
+                         </thead>
+                         {{#rows}}
+         <tr>
+            <td>{{mid}}</td>
+            <td>{{name}}</td>
+            <td>{{count}}</td>
+            <td>{{brand}}</td>
+            <td>
+               
+                <form action="/meds/delete/{{mid}}" method="post">
+                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                </form>
+                
+            </td>
+            <td>
+               
+                <form action="/meds/edit/{{mid}}" method="get">
+                     <button class="btn btn-success btn-sm" type="submit">Edit</button>
+                </form>
+
+            </td>
+         </tr>
+       {{/rows}}    
+                     </table>
+                </div>
+           </div>
+
+           <div class="row mt-3">
+                <div class="col-md-12">
+                    <a href="/add" class="btn btn-success btn-sm">Add Meds</a>
+                </div>
+           </div>
+        </div>
+       
+       
+    </body>
+</html>
