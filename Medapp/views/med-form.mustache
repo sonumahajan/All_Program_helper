@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    
+    </head>
+    <body>
+    <div class="container">
+           <div class="row mt-4 ">
+                <div class="col-md-12">
+                    <h3>Add meds</h3> 
+                </div>
+           </div>
+           <div class="row mt-1">
+                <div class="col-md-12">
+                    <form action="/meds/add" method="post">
+                        <div class="form-group my-3">
+                            <label for="name">Enter Med name :</label>
+                            <input type="text"  class="form-control" name="name" placeholder="medicine name"/>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="count">Enter Count : </label>
+                            <input type="text" class="form-control" name="count" placeholder="count"/>
+                        </div>
+                        <div class="form-group my-3">
+                            <label class="form-check-label" for="brand">Enter Brand :</label>
+                            <input type="text" class="form-control" name="brand" placeholder="brand"/>
+                        </div>
+                        <div class="mt-4">
+                           <button type="submit" class="btn btn-success btn-sm">Add</button>
+                           <a href="/meds" class="btn btn-danger btn-sm">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+           </div>
+    </div>       
+    </body>
+</html>
