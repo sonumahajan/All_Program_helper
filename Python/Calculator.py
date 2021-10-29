@@ -44,4 +44,4 @@ while True:
           break
 
     else:
-        print("Please Input Valid Number")
+        print("Invalid Input")
