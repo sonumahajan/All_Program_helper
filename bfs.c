@@ -29,6 +29,6 @@ void main() {
 	for (i=1;i<=n;i++)
 	  if(visited[i])
 	   printf("%d\t",i); else
-	   printf("\n Bfs is not possible");
+	   printf("\n here Bfs is not possible");
 	getch();
 }
