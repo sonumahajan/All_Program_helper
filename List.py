@@ -33,6 +33,7 @@ while i<(len(list1)):
     i+=1
 print()
  
+ 
 #copy and clone of list
  
 l1=[1,2,3,4,5,6,7,8,9]
