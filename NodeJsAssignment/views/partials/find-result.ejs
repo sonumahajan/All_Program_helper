@@ -1,0 +1,20 @@
+<%- include('header'); %>
+<section class="find-result">
+    <p>Find Result:</p>
+
+    <div class="find-result-form">
+        <form method="POST" action="/student/result" >
+            <label for="roll-no">Roll No:</label><br>
+            <input type="number" id="rollno" name="rollno" required><br>
+    
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</section>
+
+
+

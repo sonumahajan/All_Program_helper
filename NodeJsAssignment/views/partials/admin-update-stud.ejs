@@ -1,0 +1,23 @@
+<%- include('header'); %>
+
+<section class="add-stud">
+    <a href="/teacher"><button>Go Back</button></a>
+
+    <div class="add-stud-form">
+        <form method="POST" action="/teacher/update" >
+            <label for="roll-no">Roll No:</label><br>
+            <input type="number" id="rollno" name="rollno" value="<%= student.rollno %>" readonly required><br>
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="<%= student.name %>"  required><br>
+
+            <label for="dob">Date Of Birth:</label><br>
+            <input type="date" id="dob" name="dob" value="<%= student.dob %>"  required><br>
+
+            <label for="score">Score:</label><br>
+            <input type="number" id="score" name="score" value="<%= student.score %>"  required><br>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</section>
