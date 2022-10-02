@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">rAceli Game</string>
+    <string name="username">Username</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnCreateUser">Create User</string>
+    <string name="username2">Username</string>
+    <string name="banner_image">Banner Image</string>
+    <string name="errorNullLoginUsername">Please enter username</string>
+    <string name="errorWaitingForAlice">We are waiting for Alice</string>
+    <string name="Alice">Alice</string>
+    <string name="errorCanNotCreateAlice">Alice can not create</string>
+    <string name="createUserSuccess">User created successfully</string>
+    <string name="errorUsernameExist">Username already exist</string>
+    <string name="hintTextInput">Enter username</string>
+    <string name="errorUsernameNotExist">Username not exist, please register one</string>
+    <string name="flag">JwAIBB41BBsGBCUzGgsKNAANPAckMwoMFy4ZHQoLJBE=</string>
+</resources>

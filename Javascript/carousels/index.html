@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideShow</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1/2</div>
+            <img src="https://i.ytimg.com/vi/vWFEnoGY9bA/maxresdefault.jpg" style="width: 100%; height: 500px;">
+            <div class="text">Image 1</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2/2</div>
+            <img src="https://www.10wallpaper.com/wallpaper/1920x1440/1602/Blue_lagoon_grindavik_iceland-Perfect_Scenery_HD_Wallpaper_1920x1440.jpg" style="width: 100%; height: 500px;">
+            <div class="text">Image 2</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+        <a class="next" onclick="plusSlides(1)">&#10095</a>
+    </div>
+    <br>
+    <div style="text-align: center;">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+</div>
+    <script src="./logic.js"></script>
+</body>
+</html>

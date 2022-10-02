@@ -1,0 +1,91 @@
+<!doctype>
+<html>
+    <head><title>Advance Form Validation</title>
+        <style>
+
+        </style>
+        
+        <script>
+//            function validate1()
+//            {
+//                var pattern=/^[a-zA-Z]{3,8}$/;
+//                var un=document.getElementsByName("un");
+//                var u=un[0].value;
+//                if(u!.match(pattern))
+//                {var msg1=document.getElementById("er_un");
+//                    msg1.innerHTML="Name Invalid";
+//                    msg1.style.color="red";}
+//            }
+            
+            function validate()
+            {
+                var pattern=/^[a-zA-Z]{3,8}$/;
+                var pattern2=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$]).{4,9}$/;
+                
+                var un=document.getElementsByName("un");
+                var u=un[0].value;
+                if(u.match(pattern))
+                {
+                    var p=document.getElementsByName("p");
+                    var ps=p[0].value;
+                    if(ps.match(pattern2))
+                    {
+                    var em=document.getElementsByName("e");
+                    var email=em[0].value;
+                    var atratepos=email.indexOf("@");
+                    var dotpos=email.lastIndexOf(".");
+                    var len=email.length;
+                    
+                    var dif_dot_len= len-dotpos;
+                    var dif_atrate_dot= dotpos-atratepos;
+                    
+                    if (dif_dot_len<3 || dif_atrate_dot<1 || atratepos<1)
+                        {
+                        var                     msg3=document.getElementById("er_e");
+                        msg3.innerHTML="Email is Invalid!!";
+                        msg3.style.color="red";
+                        return false;
+                        }
+                        else
+                        {return true;}
+                            
+                    }
+                    else    
+                    {  var msg2=document.getElementById("er_p");
+                        msg2.innerHTML="Password is too short!!";
+                        msg2.style.color="red";
+                        return false;
+                    }
+                }
+                
+                else    
+                {  var msg1=document.getElementById("er_un");
+                    msg1.innerHTML="Name Invalid";
+                    msg1.style.color="red";
+                    return false;
+                }
+                
+                
+            }
+        </script>
+    
+    
+    </head>
+    
+    <body>
+        <h1>Form Validation JS</h1>
+        <div id='a'>
+            <h2 style="text-align: center;">Registration Form</h2>
+        <form action="#" method="post" onsubmit="return validate();"> 
+            <table>
+                <tr><td>User Name*</td><td><input type="text" name="un"><label id="er_un"></label></td></tr>
+                <tr><td>Password*</td><td><input type="text" name="p"><label id="er_p"></label></td></tr>
+                <tr><td>E-mail*</td><td><input type="text" name="e"><label id="er_e"></label></td></tr>
+                <tr><td></td><td><input type="Submit"> <input type="Reset"></td></tr>
+
+            </table>
+        </form>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,44 @@
+{
+    "question": [
+      "Q1. GUI stands for :",
+      "Q2. Graphics can be :",
+      "Q3. CAD stands for :",
+      "Q4. The components of Interactive computer graphics are :",
+      "Q5. Which one of the following is the primarily used output device? :"
+    ],
+    "answer": [
+      3,
+      4,
+      2,
+      4,
+      1
+    ],
+    "options": [
+  
+      ["Graphics uniform interaction",
+        "Graphical user interaction",
+        "Graphical user interface",
+        "None of the above"
+      ],
+      ["Simulation",
+        "Drawing",
+        "Movies, photographs",
+        "All of the above"
+      ],
+      ["Computer art design",
+        "Computer-aided design",
+        "Car art design",
+        "None of the above"
+      ],
+      ["A monitor",
+        "Display controller",
+        "Frame buffer",
+        "All of the above"
+      ],
+      ["Video monitor",
+        "Scanner",
+        "Speaker",
+        "Printer"
+      ]
+    ]
+  }

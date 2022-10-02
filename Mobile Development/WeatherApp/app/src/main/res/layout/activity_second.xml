@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C6C7C992"
+    tools:context=".secondActivity">
+
+    <ImageView
+        android:id="@+id/weatherImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/cloud" />
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_toEndOf="@id/weatherImage"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="100sp" />
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weatherImage"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="38sp" />
+
+    <TextView
+        android:id="@+id/tempunit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:text="°C"
+        android:textColor="@android:color/white"
+        android:textSize="60sp" />
+
+    <RelativeLayout
+        android:id="@+id/sec1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/city"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="60sp"
+            android:background="@drawable/back"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Weather"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/wea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="80dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sec2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/sec1"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="60sp"
+            android:background="@drawable/back"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Humidity"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/hum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="82dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/sec2"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="60sp"
+            android:background="@drawable/back"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Pressure"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/press"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="80dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

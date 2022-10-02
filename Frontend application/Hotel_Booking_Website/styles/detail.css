@@ -1,0 +1,143 @@
+.top-box {
+    display: flex;
+    max-height: 400px;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid black;
+    margin: 2%;
+}
+
+.image-container {
+    /* width: 58%; */
+    text-align: center;
+    margin: 1% auto;
+}
+
+.common img {
+    width: 500px;
+    height: 350px;
+    max-height: 350px;
+}
+
+.form-container {
+    /* width: 30%; */
+    border-left: 1px solid;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 7% 2%;
+    max-height: 400px;
+}
+
+.form-container form .input-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3%;
+}
+
+.form-container form .input-container input {
+    width: 60%;
+}
+
+.book-now {
+    text-align: center;
+}
+
+.book-now input {
+    margin-top: 5%;
+}
+
+.b-hover:hover {
+    color: #fff !important;
+    background-color: #28a745!important;
+    border-color: #28a745!important;
+}
+
+.hotel-details {
+    margin: 2%;
+}
+
+.checked {
+    color: orange;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: rosybrown;
+    font-size: 55px;
+    background-image: none;
+}
+
+.carousel-control-prev {
+    left: -8%;
+    top: -30%;
+}
+
+.carousel-control-next {
+    right: -7%;
+    top: -30%;
+}
+
+@media (min-width: 320px) and (max-width: 565px) {
+    .top-box {
+        flex-direction: column;
+        min-height: 705px;
+    }
+    .col-sm-7,
+    .col-sm-5 {
+        padding: 0;
+    }
+    .carousel-control-next {
+        right: 4%;
+    }
+    .carousel-control-prev {
+        left: 0%;
+        top: -30%;
+    }
+    .common img {
+        min-width: 305px;
+        width: 100%;
+        padding: 5px;
+        min-height: 350px;
+        padding: 5px;
+    }
+    .form-container {
+        border-top: 1px solid;
+        border-left: none;
+        min-height: 350px;
+    }
+    .form-container form {
+        padding: 0% 2% 2% 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .carousel-control-next {
+        right: 4%;
+    }
+    .carousel-control-prev {
+        left: 0%;
+        top: -30%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 922px) {
+    .col-md-7,
+    .col-md-4 {
+        padding: 0;
+    }
+    .col-md-7 {
+        -ms-flex: 0 0 65.333333%;
+        flex: 0 0 65.333333%;
+        max-width: 65.333333%;
+    }
+    .carousel-control-prev {
+        left: -3%;
+    }
+    .carousel-control-next {
+        right: 0%;
+    }
+}
