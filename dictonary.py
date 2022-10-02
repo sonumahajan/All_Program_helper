@@ -32,3 +32,4 @@ for key in Dict.keys():
 print("\nDictonary : ",end = ' ')
 for key,val  in Dict.items():
     print(key,val,"\t",end = " ")
+    
