@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+body{
+    margin:0;
+    padding:0;
+    font-family: "Poppins",sans-serif;
+}
+
+
+
+/* header syling ----------------------------------------- */
+
+        .header{
+                display:flex;
+                justify-content: center;
+                margin-top:10vh;
+                border-top:1px solid black;
+                border-bottom:1px solid black;
+                background-color: aquamarine;
+            }
+        .header p{
+                font-size: 1.5rem;
+            }
+
+        .header a{
+            text-decoration: none;
+            color:black;
+        }
+
+
+/* home styling---------------------------------------- */
+        .home{
+            margin-top:10vh;
+            display: flex;
+            flex-direction: column;
+            gap:30px;
+            align-items: center;
+        }
+        .home p{
+            font-size:1.2rem;
+            font-weight: 600;
+        }
+        .home a{
+            text-decoration: none;
+            font-size: 1.099rem;
+        }
+        .home div{
+            display:flex;
+            gap:70px;
+            justify-content: space-around;
+        }
+        .home button{
+            border:1px solid black;
+            padding:15px 40px;
+            color:white;
+            background-color: cornflowerblue;
+            cursor:pointer;
+            border-radius: 10px;
+        }
+
+
+/* all student tabel styling------------------------------- */
+.stud-table{
+    display: flex;
+    justify-content: center;
+}
+.stud-table > table, th, td {
+    border:1px solid black;
+}
+
+.stud-table table{
+    width:80%;
+}
+
+.stud-count{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} 
+
+.stud-count button{
+    border:1px solid black;
+            padding:10px 30px;
+            color:white;
+            background-color: cornflowerblue;
+            cursor:pointer;
+            border-radius: 10px;
+}
+
+/* all student data table styling and find result ---------------------------------------------------- */
+.add-stud, .find-result-form{
+    margin-top:3vh;
+}
+
+.add-stud button{
+    padding:10px 30px;
+    color:white;
+    background-color: cornflowerblue;
+    cursor:pointer;
+    border-radius: 10px;
+    border:none;
+}
+.add-stud input[type=submit], .find-result-form input[type=submit]{
+    font-size:13px;
+    padding:10px 30px;
+    color:white;
+    background-color: cornflowerblue;
+    cursor:pointer;
+    border-radius: 10px;
+    border:none;
+    margin-left:100px;
+    margin-top:20px;
+}
+
+.add-stud-form, .find-result-form{
+    display: flex;
+    justify-content: center;
+}
+
+.add-stud-form form input[type=text], .add-stud-form form input[type=number], .find-result-form form input[type=text], .add-stud-form form input[type=number], .find-result-form form input[type=number]{
+    width:290px;
+}
+
+.find-result p{
+    margin-left:50px;
+}
+
+/* show result ------------------------------------ */
+.show-result{
+    margin-top:2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.show-result p{
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+.show-result div p{
+    font-size: 1rem;
+    text-decoration: none;
+}
