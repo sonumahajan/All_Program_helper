@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic_Tac_Toe</title>
+</head>
+<body id="body">
+    <marquee behavior="scroll" direction="left">Created by Romijul Laskar (❁´◡`❁)</marquee>
+    <h1 class="hover">Welcome to TicTacToe</h1>
+    <h2 class="hover" id="h2" onclick="began()">START 🏁</h2>
+    <img src="bg.jpg" alt="image" id="img">
+    <!-- <img id="icons" src="rejected.png" alt="img" height=100 width=100> -->
+    <div id="background">
+        <table id="tbl">
+            <tr>
+                <td id="1" onclick="clic(1)"></td>
+                <td id="2" onclick="clic(2)"></td>
+                <td id="3" onclick="clic(3)"></td>
+            </tr>
+            <tr>
+                <td id="4" onclick="clic(4)"></td>
+                <td id="5" onclick="clic(5)"></td>
+                <td id="6" onclick="clic(6)"></td>
+            </tr>
+            <tr>
+                <td id="7" onclick="clic(7)"></td>
+                <td id="8" onclick="clic(8)"></td>
+                <td id="9" onclick="clic(9)"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="banner">PRESS START</div>
+    <div id="win_banner">WINNER</div>
+</body>
+<script src="script.js"></script>
+</html>
