@@ -33,6 +33,7 @@ Toppers = (("Aman","B.Tech",91.9),("AB47CB","B.SC",96),("Psych","BCA",92.7))
 for i in Toppers:
     print(i)
 print()
+
  
 Tup = (1,2,3,4,5,6,7,8)
 print(Tup.index(4))
