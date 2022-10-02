@@ -1,0 +1,159 @@
+header {
+	border: 1px solid black;
+	text-align: center;
+	color: white;
+	background: #47D7AC;
+	font: bolder;
+ 	margin-right: 2px;
+ 	margin-left: 2px;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+h4 {
+    padding-top: 2%;
+    font-weight: bold;
+    text-align: center;
+}
+
+thead {
+  font-weight: bold;
+  color: white;
+}
+
+td {
+  color: black;	
+  font-weight: normal;
+}
+
+/*#UserTable{
+    opacity: 1;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -ms-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+}*/
+
+
+ul {
+
+  display: block;
+  list-style-type: none;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0px;
+}
+
+div {
+	/*border: 1px solid black;*/
+}
+
+#div1 {
+	padding-top: 5%;
+	padding-bottom: 8%;
+}
+#div2{
+	overflow:auto; width:50%; height: 520px;
+}
+
+#div1,#div2{
+  height:50%;
+  width: 50%;
+ }
+#div2.col-xs-6
+{
+  padding:0px !important;
+}
+
+footer {
+	border: 1px solid black;
+	text-align: center;
+	color: white;
+	background: #47D7AC;
+	font-weight: bold;
+	padding: 0px;
+ 	margin-right: 2px;
+ 	margin-left: 2px;
+ 	height: auto;
+ 	width: auto;
+}
+
+
+.container-fluid{
+	border: 1px solid black;
+	/*padding-left: 5%;*/
+  	/*padding-right: 60%;*/
+  	/*padding-top: 5%;*/
+  	/*padding-bottom: 8%;*/
+	margin-left: 2px;
+  	/*width: 60%;*/
+
+}
+
+.container{
+	border: 1px solid black;
+	/*padding-left: 5%;
+  	padding-right: 60%;
+  	padding-top: 5%;
+  	padding-bottom: 5%;
+  	padding-right: auto;
+  	padding-left: 5%;
+  	margin-left: 2px;
+  	width: 60%;*/
+
+}
+
+.responsive {
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  max-height: 150px;
+}
+
+@media screen and (max-width: 600px) {
+  #div1,div2 {
+    width: 100%;
+	margin-left: 0;
+  margin-right: 0;
+  }
+  #div2{
+	  
+	  width: 100%;
+	  height: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 125px) {
+
+ #div1,div2 {
+   float: none;
+   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+ }
+ #div2{
+	  
+	  width: 100%;
+	  height: 100%;
+  }
+  
+
+}
+@media only screen and (max-width: 480px) {
+    /* horizontal scrollbar for tables if mobile screen */
+    #div1,div2 {
+        overflow: auto;
+        display: block;
+		width:100%;
+    }
+}
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
+  }
+}
+}
