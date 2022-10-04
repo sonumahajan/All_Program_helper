@@ -1,38 +1,42 @@
+//sorting an array using insertion sort.......
 #include<stdio.h>
-#define max 50
+#include<stdlib.h>
+void main()
+{
+    int i,j,*p,n,temp=0,k;
+    printf("enter the size of the array:\n");
+    scanf("%d",&n);
+    printf("enter the elements of the array:\n");
+    p=(int*)calloc(n,4);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",(p+i));
+    }
 
-void InsertionSort(int arr[],int n){
-	int i,j,key;
-	for(j=2;j<=n;j++){
-		key=arr[j];
-		i=j-1;
-		while(i>0 && arr[i]>key)
-		{
-			arr[i+1]=arr[i];
-			i=i-1;
-			
-		}
-		arr[i+1]=key;
-	}
-	
-}
-int main(){
-	int arr[max],i,n;
-	
-	printf("Enter the no. of elements in the array:");
-	scanf("%d",&n);
-	printf("Elements are:\n");
-	for(i=1;i<=n;++i)
-	{
-     scanf("%d",&arr[i]);
-	}
-	
-	InsertionSort(arr,n);
-	printf("The sorted elements are:\n");
-	for(i=1;i<=n;i++)
-	{
-     printf("%d\t",arr[i]);
-	}
-	
-	return 0;
+printf("sorting the array in ascending order using insertion sort....\n");
+
+
+        for(i=0;i<n;i++)
+        {
+            for(j=i;j>0&&*(p+j-1);j--)
+            {
+                if(*(p+j)<*(p+j-1))
+                {
+                    temp=*(p+j);
+                    *(p+j)=*(p+j-1);
+                    *(p+j-1)=temp;
+                }
+            }
+            printf("modified array:");
+            for(k=0;k<n;k++)
+            {
+                printf(" %d",*(p+k));
+            }
+
+            printf("\n");
+
+
+        }
+
+
 }
