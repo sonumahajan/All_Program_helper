@@ -1,0 +1,117 @@
+html,body{
+	height: 100%;
+	margin:0px;
+}
+.box{
+	width: 100%;
+	height: 100%;
+	background-color: orange;
+	position: relative;
+}
+.scoreBox{
+	display: inline-block;
+	position: absolute;
+	margin-left: 1100px;
+	margin-top: 50px;
+}
+.restart{
+	display: inline-block;
+	position: absolute;
+	width: 150px;
+	height: 50px;
+	border: 2px dashed green;
+	font-family: 'calibri';
+	font-size: 25px;
+	font-weight: bolder;
+	background-color: maroon;
+	color: orange;
+	margin-left: 1100px;
+	margin-top: 150px;
+}
+.scoreBox h1{
+	font-family: 'calibri';
+	font-size: 40px;
+	font-weight: bolder;
+	color: darkgreen;
+}
+#can{
+	position: absolute;
+	border: 5px solid darkgreen;
+	background-color: powderblue;
+	margin-top: 80px;
+	margin-left:550px; 
+	border-radius: 20px;
+}
+#score{
+	color: maroon;
+}
+.intro{
+	width: 400px;
+	height: 500px;
+	border: 5px solid maroon;
+	display: inline-block;
+	position: absolute;
+	margin-left: 80px;
+	margin-top: 80px;
+	border-radius: 20px;
+	background-color: #b25656;
+}
+.intro h1{
+	font-size: 25px;
+	font-family: 'calibri';
+	font-weight: bolder;
+	margin-left: 130px;
+	color: #1d1d1d;
+}
+.content{
+	width: 335px;
+	height: 410px;
+	border:3px solid black;
+	margin: auto;
+	border-radius: 20px;
+	background-color: #d18a8a;
+}
+.content h2{
+	margin-left: 10px;
+}
+.content span{
+	font-weight: bold;
+	color: #0a3928;
+}
+.content ul li{
+	margin-top: 10px;
+}
+.tag{
+	height: 40px;
+	display: inline-block;
+	position: fixed;
+	box-sizing: border-box;
+	/*border: 2px solid black;*/
+	margin-left: 900px;
+	margin-top: 600px;
+}
+.tag img{
+	width: 30px;
+	height: 30px;
+	margin-top: -10px;
+	margin-left: 25px
+}
+.tag h1{
+	color: maroon;
+	font-family: 'calibri';
+	font-size: 20px;
+	font-weight: bolder;
+	position: fixed;
+}
+.foodBox{
+	width: 15px;
+	height: 15px;
+	background-color: magenta;
+	display: inline-block;
+}
+.bonusFoodBox{
+	width: 18px;
+	height: 18px;
+	background-color: red;
+	display: inline-block;
+}
