@@ -1,6 +1,6 @@
 # Music Visualiser
 
-![3D audio-visualizer made by Santosh Arron]
+![3D audio-visualizer in ThreeJS]
 
 ## Documentation
 
