@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snake Game</title>
+	<!-- <script type="text/javascript" src="jQuery.js"></script> -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="box">
+
+		<div class="intro">
+			<u><h1>SNAKE GAME</h1></u>
+			<div class="content">
+				<h2>Instructions :</h2>
+				<ul>
+					<li>Use <span>'LEFT ARROW'</span> key OR <span>'A'</span> to move left.</li>
+					<li>Use <span>'UP  ARROW'</span> key OR <span>'W'</span> to move upwords.</li>
+					<li>Use <span>'RIGHT  ARROW'</span> key OR <span>'D'</span> to move right.</li>
+					<li>Use <span>'DOWN  ARROW'</span> key OR <span>'S'</span> to move downwords.</li>
+					<li>Eat food <div class="foodBox"></div> to make your snake Grow.</li>
+					<li>Eat bonus food <div class="bonusFoodBox"></div> to make your score high.</li>
+					<li><div class="foodBox"></div> SCORE <b> : +2 | </b><div class="bonusFoodBox"></div> SCORE <b> : +5 </b></li>
+					<li>Eat bonus before it disappears <span>(within 3 sec)</span>.</li>
+					<li>Use <span>Space</span> to <b>PAUSE</b>.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="scoreBox">
+			<h1 class="scroreBox">SCORE : <span id="score"></span> </h1>
+		</div>
+
+		<button class="restart">RESTART</button>
+
+		<div class="tag">
+			<h1>Designed & Developed By : Motasim 
+				<a href="https://github.com/motasimmakki" target="_blank">
+					<img src="github.png">
+				</a>
+				
+				<a href="https://www.linkedin.com/in/motasim-010b0a135/" target="_blank">
+					<img src="linkedin.png">
+				</a>
+			</h1>
+		</div>
+
+		<canvas height="500px" width="500px" id="can" />
+
+	</div>
+
+
+	<script type="text/javascript">
+		
+		var can=document.getElementById('can').getContext('2d');
+
+		var HEIGHT=500,WIDTH=500;
+		var snakeList,foodList,direction,eaten,eatenBonus,prevDirection,intervalVar,score=0,isRunning=false,isStop=false;
+		var eatenCount=0,speed=40,changeSpeed,gameOverStatus=false;
+		can.font='40px calibri';
+
+		can.strokeText('Click Me To Start The Game',30,260);
+
+		var snakeBody={
+			width:20,
+			height:20,
+			color:'maroon'
+		};
+
+		var food={
+			width:20,
+			height:20,
+			color:'magenta'
+		};
+
+		var foodBonus={
+			width:25,
+			height:25,
+			color:'red'
+		};
+
+		$(document).ready(function(){
+			$('.restart').on('click',function(){
+				history.go();
+			});
+		});
+
+		document.onkeydown=function(event){
+			//0-left|1-up|2=right|3-down
+			if((event.keyCode==37||event.keyCode==97||event.keyCode==65)&&prevDirection!=2){
+				direction=0;
+				// console.log(direction);
+			}
+
+			else if((event.keyCode==38||event.keyCode==119||event.keyCode==87)&&prevDirection!=3){
+				direction=1;
+				//console.log(direction);
+			}
+
+			else if((event.keyCode==39||event.keyCode==100||event.keyCode==68)&&prevDirection!=0){
+				direction=2;
+				//console.log(direction);
+			}
+
+			else if((event.keyCode==40||event.keyCode==115||event.keyCode==83)&&prevDirection!=1){
+				direction=3;
+				//console.log(direction);
+			}
+			prevDirection=direction;
+
+			if((event.keyCode==32)&&(isRunning)&&(!gameOverStatus)){
+				if(isStop){
+					intervalVar=setInterval(updateSnakePosition,speed);
+				}
+				else{
+					clearInterval(intervalVar);
+					
+					can.font='40px "Times New Roman"';
+					can.strokeText('PAUSED',180,260);
+				}
+				isStop=(!isStop);
+			}
+
+		}
+
+		testCollision=function(snakePosition,foodPostion){
+			return(
+				(snakePosition.x<=foodPostion.x+food.width)&&
+				(foodPostion.x<=snakePosition.x+snakeBody.width)&&
+				(snakePosition.y<=foodPostion.y+food.width)&&
+				(foodPostion.y<=snakePosition.y+snakeBody.width)
+			);
+		}
+
+		testCollisionSnake=function(snakeHead,snakeTail){
+			return(
+				(Math.abs(snakeHead.x-snakeTail.x)<5)&&
+				(Math.abs(snakeHead.y-snakeTail.y)<5)
+			);
+		}	
+
+		function drawSnake(sb,i){
+			can.save();
+			if(i==0)
+				can.fillStyle='black';
+			else if(i%2)
+				can.fillStyle='brown';
+			else
+				can.fillStyle=snakeBody.color;
+
+			can.fillRect(sb.x,sb.y,snakeBody.width,snakeBody.height);
+
+			can.restore();
+		}
+
+		function drawFood(f,i){
+			can.save();
+
+			if(i==0){
+				can.fillStyle=food.color;
+				// can.beginPath();
+				can.fillRect(f.x,f.y,food.width,food.height);
+				// can.arc(f.x,f.y,food.width/2,0,2*Math.PI,false);
+				// can.fill();
+			}
+			else if(i==1){
+				can.fillStyle=foodBonus.color;
+				can.fillRect(f.x,f.y,foodBonus.width,foodBonus.height);
+			}
+
+			can.restore();
+		}
+
+		updateSnakeList=function(){
+			for(var i=snakeList.length-1;i>=0;i--){
+				if(direction==0){
+					if(i==0){
+						snakeList[i].x=snakeList[i].x-5;
+					}
+					else{
+						snakeList[i].x=snakeList[i-1].x;
+						snakeList[i].y=snakeList[i-1].y;
+					}
+				}
+
+				else if(direction==1){
+					if(i==0){
+						snakeList[i].y=snakeList[i].y-5;
+					}
+					else{
+						snakeList[i].x=snakeList[i-1].x;
+						snakeList[i].y=snakeList[i-1].y;
+					}
+				}
+
+				else if(direction==2){
+					if(i==0){
+						snakeList[i].x=snakeList[i].x+5;
+					}
+					else{
+						snakeList[i].x=snakeList[i-1].x;
+						snakeList[i].y=snakeList[i-1].y;
+					}
+				}
+
+				else if(direction==3){
+					if(i==0){
+						snakeList[i].y=snakeList[i].y+5;
+					}
+					else{
+						snakeList[i].x=snakeList[i-1].x;
+						snakeList[i].y=snakeList[i-1].y;
+					}
+				}
+			}
+		}
+
+		checkSnakePosition=function(){
+			if(snakeList[0].x>500){
+				snakeList[0].x=0;
+			}
+
+			if(snakeList[0].x<0){
+				snakeList[0].x=500;
+			}
+
+			if(snakeList[0].y>500){
+				snakeList[0].y=0;
+			}
+			
+			if(snakeList[0].y<0){
+				snakeList[0].y=500;
+			}
+		}
+
+		isGameOver=function(){
+			for(i in snakeList){
+				if(i==0)
+					continue;
+				if(testCollisionSnake(snakeList[0],snakeList[i])){
+					new Audio('collision.mp3').play();
+
+					clearInterval(intervalVar);
+
+					setTimeout(function(){
+						can.clearRect(0,0,WIDTH,HEIGHT);
+
+						can.font='40px "Tomes New Roman"';
+						can.fillStyle='red';
+						can.fillText('GAME OVER',140,220);
+						can.font='35px "Tomes New Roman"';
+						can.fillStyle='maroon';
+						can.fillText('YOUR SCORE IS : '+score,110,280);
+
+						$('.scoreBox').text('');
+					},1000);
+					gameOverStatus=true;
+
+					return;
+				}
+			}
+		}
+
+		updateSnakePosition=function(){
+			can.clearRect(0,0,WIDTH,HEIGHT);
+
+			if(changeSpeed!=speed){
+				clearInterval(intervalVar);
+				speed=changeSpeed;
+				intervalVar=setInterval(updateSnakePosition,speed);
+			}
+
+			while(eaten){
+				var x_pos1=Math.random()*485+5;
+				var y_pos1=Math.random()*485+5;
+
+				foodList[0]={
+					x:x_pos1,
+					y:y_pos1
+				};
+				
+				eaten=false;
+			}
+
+			while(eatenBonus&&(eatenCount==6)){
+				eatenCount=0;
+				var x_pos2=Math.random()*485+5;
+				var y_pos2=Math.random()*485+5;
+
+				foodList[1]={
+					x:x_pos2,
+					y:y_pos2
+				};
+
+				eatenBonus=false;	
+			}
+
+			drawFood(foodList[0],0);
+			if(!eatenBonus){
+				drawFood(foodList[1],1);
+
+				setTimeout(function(){
+					eatenBonus=true;
+				},3000);
+
+			}
+
+			snakeList.forEach(drawSnake);
+
+			if(testCollision(snakeList[0],foodList[0])){
+				// foodList=[];
+				eaten=true;
+				eatenCount++;
+
+				if(speed>=15)
+					changeSpeed=(speed-0.5);
+				
+				score+=2;
+				var x_new,y_new;
+
+				if(direction==0){
+					x_new=snakeList[0].x-10;
+					y_new=snakeList[0].y;
+				}
+
+				else if(direction==1){
+					x_new=snakeList[0].x;
+					y_new=snakeList[0].y-10;
+				}
+
+				else if(direction==2){
+					x_new=snakeList[0].x+10;
+					y_new=snakeList[0].y;
+				}
+
+				else if(direction==3){
+					x_new=snakeList[0].x;
+					y_new=snakeList[0].y+10;
+				}
+
+				snakeList.unshift({x:x_new,y:y_new});
+
+				new Audio('food.mp3').play();
+			}
+
+			if(!eatenBonus){
+
+				if(testCollision(snakeList[0],foodList[1])){
+					eatenBonus=true;
+
+					if(speed>=15)
+						changeSpeed=(speed-1);
+
+					score+=5;
+					var x_new,y_new;
+
+					if(direction==0){
+						x_new=snakeList[0].x-15;
+						y_new=snakeList[0].y;
+					}
+
+					else if(direction==1){
+						x_new=snakeList[0].x;
+						y_new=snakeList[0].y-15;
+					}
+
+					else if(direction==2){
+						x_new=snakeList[0].x+15;
+						y_new=snakeList[0].y;
+					}
+
+					else if(direction==3){
+						x_new=snakeList[0].x;
+						y_new=snakeList[0].y+15;
+					}
+
+					snakeList.unshift({x:x_new,y:y_new});
+
+					new Audio('bonus.mp3').play();
+				}
+			}
+
+			$('#score').text(score);
+
+			isGameOver();
+
+			checkSnakePosition();
+
+			updateSnakeList();
+
+			//console.log(speed);
+
+		}
+
+		function startGame(){
+			snakeList=[
+				{x:220,y:200},
+				{x:210,y:200},
+				{x:200,y:200}
+			];
+
+			foodList=[];
+
+			direction=99;
+
+			eaten=true;
+
+			eatenBonus=true
+
+			score=0;
+
+			isRunning=true;
+
+			changeSpeed=speed;
+
+			intervalVar=setInterval(updateSnakePosition,speed--);
+		}
+
+		//startGame();
+
+		document.getElementById('can').onmousedown=function(event){
+			if(!isRunning){
+				startGame();
+			}
+		}
+
+	</script>
+
+</body>
+</html>
