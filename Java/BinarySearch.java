@@ -1,27 +1,44 @@
-import java.util.*;
-public class MyClass {
-    private static boolean bSearch(int[] arr, int target) {
-        Arrays.sort(arr);
-        int l = 0, r = arr.length - 1;
-        while(l <= r) {
-            int mid = l + (r - l) / 2;
-            if(arr[mid] == target) return true;
-            else if(arr[mid] < target) l = mid + 1;
-            else r = mid - 1;
-        }
-        return false;
-    }
+import java.util.Scanner;
+class BinarySearchExample
+{
+   public static void main(String args[])
+   {
+      int counter, num, item, array[], first, last, middle;
+      //To capture user input
+      Scanner input = new Scanner(System.in);
+      System.out.println("Enter number of elements:");
+      num = input.nextInt(); 
 
-    public static void main(String args[]) {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int[] arr = new int[n];
-        for(int i = 0; i < n; i++) {
-            arr[i] = scn.nextInt();
-        }
+      //Creating array to store the all the numbers
+      array = new int[num];
 
-        int target = scn.nextInt();
-        if(bSearch(arr, target)) System.out.println("Found the element");
-        else System.out.println("Not found the element");
-    }
+      System.out.println("Enter " + num + " integers");
+      //Loop to store each numbers in array
+      for (counter = 0; counter < num; counter++)
+          array[counter] = input.nextInt();
+
+      System.out.println("Enter the search value:");
+      item = input.nextInt();
+      first = 0;
+      last = num - 1;
+      middle = (first + last)/2;
+
+      while( first <= last )
+      {
+         if ( array[middle] < item )
+           first = middle + 1;
+         else if ( array[middle] == item )
+         {
+           System.out.println(item + " found at location " + (middle + 1) + ".");
+           break;
+         }
+         else
+         {
+             last = middle - 1;
+         }
+         middle = (first + last)/2;
+      }
+      if ( first > last )
+          System.out.println(item + " is not found.\n");
+   }
 }

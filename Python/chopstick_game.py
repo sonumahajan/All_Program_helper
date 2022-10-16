@@ -1,10 +1,10 @@
 def UserIn_for_move1():
-    n = input("\nEnter move for Player 1 -")
+    n = input("\nEnter move for Player 1 (ENTER A or S)")
     return n
 
 
 def UserIn_for_move2():
-    n = input("\nEnter move for Player 2 -")
+    n = input("\nEnter move for Player 2 (ENTER A or S")
     return n
 
 
@@ -136,5 +136,7 @@ def main():
     working()
     restart_game()
 
-
-main()
+try:
+    main()
+except Exception as e:
+    print(e)

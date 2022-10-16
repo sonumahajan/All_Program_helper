@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon Says</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <p id="result" class="hide"></p>
+      <button id="start">Start Game</button>
+    </div>
+    <div class="wrapper hide">
+      <div class="game-con">
+        <div class="simon-says">
+          <div class="color1 color-part"></div>
+          <div class="color2 color-part"></div>
+          <div class="color3 color-part"></div>
+          <div class="color4 color-part"></div>
+          <div id="count">00</div>
+        </div>
+      </div>
+      <div class="rules">
+        <h3>How To PLay:</h3>
+        <ol>
+          <li>
+            At the beginning of the game, one of the 4 keys lights up randomly.
+          </li>
+          <li>The player has to press the same key.</li>
+          <li>
+            Next, the Simon turns back the same light on and a second one, again
+            randomly.
+          </li>
+          <li>
+            The player has to reproduce this chain of light using his memory.
+            And so on...
+          </li>
+          <li>
+            In each round a new key is added to the series and the game becomes
+            all the more difficult as the player's memory is put to the test.
+          </li>
+          <li>
+            If the player doesn't make any mistake, the game goes on, so it is
+            an endless game!
+          </li>
+        </ol>
+      </div>
+    </div>
+    <script>
+      const countValue = document.getElementById("count");
+      const colorPart = document.querySelectorAll(".color-part");
+      const container = document.querySelector(".container");
+      const startButton = document.querySelector("#start");
+      const result = document.querySelector("#result");
+      const wrapper = document.querySelector(".wrapper");
+
+      const colors = {
+        color1: {
+          current: "#068e06",
+          new: "#11e711",
+        },
+        color2: {
+          current: "#950303",
+          new: "#fd2a2a",
+        },
+        color3: {
+          current: "#01018a",
+          new: "#2062fc",
+        },
+        color4: {
+          current: "#919102",
+          new: "#fafa18",
+        },
+      };
+
+      let randomColors = [];
+      let pathGeneratorBool = false;
+      let count = 0,
+        clickCount = 0;
+
+      // start game
+      startButton.addEventListener("click", () => {
+        count = 0;
+        clickCount = 0;
+        randomColors = [];
+        pathGeneratorBool = false;
+        wrapper.classList.remove("hide");
+        container.classList.add("hide");
+        pathGenerate();
+      });
+
+      // Function to decide the sequence
+      const pathGenerate = () => {
+        randomColors.push(generateRandomValue(colors));
+        count = randomColors.length;
+        pathGeneratorBool = true;
+        pathDecide(count);
+      };
+
+      //Function to get a random value from object
+      const generateRandomValue = (obj) => {
+        let arr = Object.keys(obj);
+        return arr[Math.floor(Math.random() * arr.length)];
+      };
+
+      // Function to play the sequence
+      const pathDecide = async (count) => {
+        countValue.innerText = count;
+        for (let i of randomColors) {
+          let currentColor = document.querySelector(`.${i}`);
+          // Change this delay based on requirement
+          await delay(500);
+          currentColor.style.backgroundColor = `${colors[i]["new"]}`;
+          await delay(600);
+          currentColor.style.backgroundColor = `${colors[i]["current"]}`;
+          await delay(600);
+        }
+        pathGeneratorBool = false;
+      };
+
+      //delay for blink effect
+      async function delay(time) {
+        return await new Promise((resolve) => {
+          setTimeout(resolve, time);
+        });
+      }
+
+      //User Click
+      colorPart.forEach((element) => {
+        element.addEventListener("click", async (e) => {
+          //if user clicks the same color then next level
+          if (pathGeneratorBool) {
+            return false;
+          }
+          if (e.target.classList[0] == randomColors[clickCount]) {
+            // color blink effect on click
+            //updated
+            e.target.style.backgroundColor = ` ${
+              colors[randomColors[clickCount]]["new"]
+            }`;
+            await delay(500);
+            //updated
+            e.target.style.backgroundColor = `${
+              colors[randomColors[clickCount]]["current"]
+            }`;
+            // user click
+            clickCount += 1;
+            //next level if number of valid clicks==count
+            if (clickCount == count) {
+              clickCount = 0;
+              pathGenerate();
+            }
+          } else {
+            lose();
+          }
+        });
+      });
+
+      //Function when player executes wrong sequence
+      const lose = () => {
+        container.classList.remove("hide");
+        wrapper.classList.add("hide");
+        result.innerHTML = `<span>Your score:</span> ${count}`;
+        result.classList.remove("hide");
+        startButton.innerText = "Play Again";
+        startButton.classList.remove("hide");
+      };
+    </script>
+  </body>
+</html>

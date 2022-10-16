@@ -1,0 +1,19 @@
+{
+  "name": "3d_audio_visualizer",
+  "version": "1.0.0",
+  "description": "![audio-visualizer]",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godofgeeks23/audio-visualizer-three-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/godofgeeks23/audio-visualizer-three-js/issues"
+  },
+  "homepage": "https://github.com/godofgeeks23/audio-visualizer-three-js#readme"
+}

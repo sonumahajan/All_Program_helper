@@ -1,26 +1,32 @@
 import java.util.Random;
 
 class Dice {
-    public static void main(String[] args) {
+    static Random cinta = new Random();
 
-    Random cinta = new Random();
-
-    int a = 6;
-    int b = 6;
-
+    static int a = 6;
+    static int b = 6;
+    
+    static int gen() {
     int lope = cinta.nextInt(a);
-        lope = lope++;
-    int lopyu = cinta.nextInt(b);
-        lopyu = lopyu++;
-    int too = lope+lopyu;
-
-    System.out.println("Result");
-    System.out.println("1st :"+lope);
-    System.out.println("2nd :"+lopyu);
-    System.out.println(" total:"+too);
-
-
-    
+       // lope = lope++;
+        if (lope == 0) {
+        
+        return gen();
+        }
+    return lope;
     }
+   
+    public static void main(String args[]) {
+     
+    int first = gen();
+    int second = gen();
     
+    int total = first + second;
+ 
+    System.out.println("Result");
+    System.out.println("1st :"+first);
+    System.out.println("2nd :"+second);
+    System.out.println(" total:"+total);
+     
+    }
 }

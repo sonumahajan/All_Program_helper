@@ -1,0 +1,1 @@
+This java application is used to connect and communicate between one system to another using socket.io

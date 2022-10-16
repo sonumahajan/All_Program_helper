@@ -1,0 +1,32 @@
+<%- include('header'); %>
+
+<main class="admin-all-stud">
+    <div class="stud-count">
+        <p>Total <%= studentCount %> students</p>
+        <a href="/teacher/add"><button>Add Record</button></a>
+    </div>
+
+    <div class="stud-table">
+        <table>
+            <tr>
+              <td>Roll No</td>
+              <td>Name</td>
+              <td>Date Of Birth</td>
+              <td>Score</td>
+              <td>Actions</td>
+            </tr>
+
+            <% data.forEach((student) =>{ %>
+              <tr>
+                <td><%= student.rollno %></td>
+                <td><%= student.name %></td>
+                <td><%= student.dob %></td>
+                <td><%= student.score %></td>
+                <td><a href="/teacher/edit/<%= student.rollno %>" >Edit</a> <a href="/teacher/delete/<%= student.rollno %>">Delete</a></td>
+              </tr>
+            <% }); %>
+
+           
+          </table>
+    </div>
+</main>
