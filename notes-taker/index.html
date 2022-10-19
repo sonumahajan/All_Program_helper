@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- title -->
+    <title>NOTES</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <!-- bootstrap css cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- heading -->
+        <a class="navbar-brand" href="#">NOTES</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <form class="form-inline my-2 my-lg-0">
+                <!-- search button -->
+                <input class="form-control mr-sm-2" id="searchNote" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- notes -->
+    <div class="container my-3">
+        <!-- heading -->
+        <h1>Welcome to NOTES!!!</h1>
+
+        <div class="card">
+            <div class="card-body">
+
+                <!-- add a title -->
+                <div class="form-group">
+                    <h5 class="card-title">Add a Title</h5>
+                    <input type="text" class="form-control" id="title" aria-describedby="title" placeholder="Title...">
+                </div>
+
+                <!-- add a note -->
+                <div class="form-group">
+                    <h5 class="card-title">Add a Note</h5>
+                    <textarea class="form-control" id="note" rows="3" placeholder="Note..."></textarea>
+                </div>
+                <button class="btn btn-primary" id="addBtn">Add a Note</button>
+            </div>
+        </div>
+
+        <hr><h1>Notes...</h1><hr>
+
+        <!-- notes -->
+        <div id="notes" class="row container-fluid"></div>
+    </div>
+
+    <!-- bootstrap js cdn -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- script -->
+    <script src="index.js"></script>
+    
+</body>
+
+</html>
