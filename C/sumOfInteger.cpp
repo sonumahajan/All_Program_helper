@@ -1,3 +1,4 @@
+// Find the smallest positive integer value that cannot be represented as sum integer
 #include<bits/stdc++.h> 
 using namespace std; 
 
