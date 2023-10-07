@@ -1,0 +1,26 @@
+class Solution {
+public:
+    string countAndSay(int n) {
+        string ans="1";
+
+        for(int i=2;i<=n;i++){
+            string s=ans;
+            string str="";
+            int freq=1;
+            int j;
+            for(j=1;j<s.size();j++)
+            {
+                if(s[j]==s[j-1])
+                    freq++;
+                else{
+                    str+=to_string(freq)+s[j-1];
+                    freq=1;
+                }
+            }
+            str+=to_string(freq)+s[j-1];
+            ans=str;
+        }
+
+        return ans;
+    }
+};
